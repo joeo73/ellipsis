@@ -6,21 +6,21 @@ A jQuery plugin for appending an ellipsis to text blocks
 This plugin differs from other ellipsis plugins as it uses the container height property to shorten text.  
 
 ## Usage
-'''
+```
 $("#shorten").ellipsis();
-'''
+```
 
 ## You may also override the text display:
 
-'''
+```
 $("#shorten").ellipsis({ ellipsis_text: '<span>***</span>' });
-'''
+```
 
 The element you want to shorten must have a container set to an explicit height
 and the text overflow set to hidden.  
 
 Example:
-'''
+```
 <html>
 <style>
   div#test {
@@ -44,5 +44,14 @@ Example:
   </div>
 </div>
 </html>
-'''
+```
+
+## Getting started:
+
+Download the [production version][min] or the [development version][max].
+
+[min]: https://raw.github.com/joeo73/ellipsis/master/build/jquery.ellipsis.min.js
+[max]: https://raw.github.com/joeo73/ellipsis/master/src/jquery.ellipsis.js
+
+
 
