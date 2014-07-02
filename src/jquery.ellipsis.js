@@ -1,16 +1,18 @@
+/**
+ * Author Joe Osowski
+ */
 (function($) {
 
   /**
    * Drop words until the element selected fits within it's container and then append an ellipsis
    *
    * @param topElement the very top element being worked on
-   * @param parts the components currently being worked on
+   * @param parts the elements currently being worked on
    */
   var ellipsis_recurse = function(topElement, parts) {
     var ellipsis_added = false;
 
     //traverse from the last element up
-    //for(var a = 0; a < elements.length; a++) {
     for(var a = parts.length - 1; a > -1; a--) {
       var element = parts[a];
 
@@ -42,19 +44,9 @@
 
           //If all words have been popped that need to be, append the new node for the ellipsis
           if(topElement.scrollHeight <= topElement.clientHeight) {
-//            console.log('Appending ellipsis after:');
-//            console.log(element);
-//            console.log(element.nodeValue.trim().length);
 
-            //We've emptied out the current element, we'll prepend the ellipsis
-            //if(element.nodeValue.trim().length == 0) {
-            //  $(element).parent().parent().before($.fn.ellipsis.settings.ellipsis_text);
-            //} else {
             var ellipsis = $($.fn.ellipsis.settings.ellipsis_text).uniqueId();
             $(element).after(ellipsis);
-
-//            console.log('Added Ellipsis (inner loop): ' + ellipsis.attr('id'));
-
             ellipsis_added = true;
 
             //The new text has introduced a line break, pop more words!
@@ -67,7 +59,6 @@
                 });
               } else {
                 //No more words to pop. Remove the element, pass through and add the ellipsis someplace else
-  //              console.log("Removing: " + ellipsis.attr('id'));
                 $('#' + ellipsis.attr('id')).remove();
                 ellipsis_added = false;
               }
