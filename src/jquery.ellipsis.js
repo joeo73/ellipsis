@@ -45,7 +45,8 @@
           //If all words have been popped that need to be, append the new node for the ellipsis
           if(topElement.scrollHeight <= topElement.clientHeight) {
 
-            var ellipsis = $($.fn.ellipsis.settings.ellipsis_text).uniqueId();
+            console.log('ellipsis-' + $.fn.ellipsis.idCounter++);
+            var ellipsis = $($.fn.ellipsis.settings.ellipsis_text).attr('id', 'ellipsis-' + $.fn.ellipsis.idCounter++);
             $(element).after(ellipsis);
             ellipsis_added = true;
 
@@ -58,6 +59,7 @@
                   this.nodeValue = words.join(" ");
                 });
               } else {
+                console.log('here');
                 //No more words to pop. Remove the element, pass through and add the ellipsis someplace else
                 $('#' + ellipsis.attr('id')).remove();
                 ellipsis_added = false;
@@ -79,6 +81,8 @@
     ellipsis_recurse(this[0], $(this).contents());
     return this;
   };
+
+  $.fn.ellipsis.idCounter = 0;
 
   $.fn.ellipsis.settings = {
     ellipsis_text : '<span>...</span>'
