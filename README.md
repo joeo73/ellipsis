@@ -3,7 +3,8 @@ ellipsis
 
 A jQuery plugin for appending an ellipsis to text blocks
 
-This plugin differs from other ellipsis plugins as it uses the container height property to shorten text.  
+This plugin differs from other ellipsis plugins as it uses the container height property to 
+shorten text.  
 
 ## Usage
 ```
@@ -20,8 +21,8 @@ The element you want to shorten must have a container set to an explicit height
 and the text overflow set to hidden.  
 
 Example:
-```
-<html>
+
+
 <style>
   div#test {
     border: 1px solid black; height: 100px; width: 250px;
@@ -30,6 +31,9 @@ Example:
   div#test div.title { color: red; }
 </style>
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" />
+<script src="https://raw.github.com/joeo73/ellipsis/master/build/jquery.ellipsis.min.js"/>
+ 
 <div id="test">
   <div class="title"><span>Bushwick keffiyeh: egan tattooed. Deep v tote</span></div>
   <div class="shorten"><span>
@@ -43,8 +47,8 @@ Example:
     mixtape Pitchfork leggings. Vegan kogi brunch, Tonx Schlitz Odd Future try-hard.</span>
   </div>
 </div>
-</html>
-```
+
+
 
 ## Getting started:
 
